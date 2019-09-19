@@ -1,0 +1,2 @@
+# weavile-bot
+Discord bot
