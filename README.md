@@ -1,2 +1,2 @@
 # weavile-bot
-Discord bot
+General purpose discord bot.

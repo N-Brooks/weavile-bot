@@ -1,0 +1,33 @@
+{
+  "name": "weavile-bot",
+  "version": "0.1.0",
+  "description": "General purpose discord bot.",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "tslint -c tslint.json 'src/**/*.ts'",
+    "test": "nyc --reporter=text mocha -r ts-node/register src/**/*.spec.ts",
+    "build": "npm run lint; tsc",
+    "clear": "rm -rf dist",
+    "start": "node dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteoauger/weavile-bot.git"
+  },
+  "author": "Matteo AUGER",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matteoauger/weavile-bot/issues"
+  },
+  "homepage": "https://github.com/matteoauger/weavile-bot#readme",
+  "devDependencies": {
+    "@types/node": "^12.7.5",
+    "dotenv": "^8.1.0",
+    "reflect-metadata": "^0.1.13",
+    "tslint": "^5.20.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}
