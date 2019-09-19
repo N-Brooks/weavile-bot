@@ -1,4 +1,5 @@
 import { ICommand } from "../command";
+import HelpCommand from "../help";
 
 /**
  * Command registry.
@@ -6,6 +7,7 @@ import { ICommand } from "../command";
  * @author Matteo AUGER
  */
 export const COMMAND_REGISTRY: ICommandsRegistry = {
+    help: new HelpCommand(),
 };
 
 /**
