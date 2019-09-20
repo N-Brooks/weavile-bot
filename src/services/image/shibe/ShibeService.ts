@@ -15,9 +15,16 @@ export default class ShibeService implements IShibeService {
                 }
 
                 // collecting the response content
-                const content: string[] = [];
+                const content: any = [];
                 response.on("data", (chunk) => content.push(chunk)); // pushing each received chunk in the data array
-                response.on("end", () => resolve(content[0]));       // once every chunk is collected, resolving
+                response.on("end", () => {
+                    const parsedData = JSON.parse(content);
+                    if (Object.keys(parsedData).length < 1) {
+                        reject("There was a problem retrieving the shibe picture.");
+                    }
+
+                    resolve(parsedData[0]);
+                });
             });
 
             // handling request error
