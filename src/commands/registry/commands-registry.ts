@@ -6,6 +6,11 @@ import { ICommand } from "../command";
 import HelpCommand from "../help";
 import { ShibeCommand } from "../shibe";
 
+/**
+ * Command registry
+ * @author Matteo AUGER
+ */
+
 // dependency injection
 const container = new Container();
 container.bind<IShibeService>("IShibeService").to(ShibeService);
@@ -13,7 +18,6 @@ container.bind<IShibeService>("IShibeService").to(ShibeService);
 /**
  * Command registry.
  * Any command must be added in this registry in order to be run and documented.
- * @author Matteo AUGER
  */
 export const COMMAND_REGISTRY: ICommandsRegistry = {
     help: new HelpCommand(),
